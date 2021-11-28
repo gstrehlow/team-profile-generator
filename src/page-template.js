@@ -9,7 +9,7 @@ function generateMembers(memberList){
                 <div class="card-body">
                 <ul>
                     <li>ID: ${obj.getID()}</li> 
-                    <li>Email: ${obj.getEmail()}</li> 
+                    <li>Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li> 
                     <li>Office Number: ${obj.getOfficeNumber()}</li>
                     </ul>
                     </div>
@@ -25,8 +25,8 @@ function generateMembers(memberList){
                 <div class="card-body">
                 <ul>
                     <li>ID: ${obj.getID()}</li> 
-                    <li>Email: ${obj.getEmail()}</li> 
-                    <li>GitHub Profile: ${obj.getGitHub()}</li>
+                    <li>Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li> 
+                    <li>GitHub: <a href=${obj.getGitHub()} target="_blank">GitHub</a></li>
                     </ul>
                     </div>
                     </div>
@@ -41,7 +41,7 @@ function generateMembers(memberList){
                 <div class="card-body">
                 <ul>
                     <li>ID: ${obj.getID()}</li> 
-                    <li>Email: ${obj.getEmail()}</li> 
+                    <li>Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li> 
                     <li>School: ${obj.getSchool()}</li>
                     </ul>
                     </div>
@@ -70,6 +70,7 @@ module.exports = memberList =>{
            background-size: 100% 100%;
            background-repeat: no-repeat;
            margin: 0%;
+           height: 100vh;
        }
        .header {
            background-color: rgb(245, 247, 155);
@@ -78,15 +79,18 @@ module.exports = memberList =>{
            font-size: 30px;
            font-family: 'Bungee Shade', cursive;  
        }
-       .container {
+       #employees {
            display: flex;
            justify-content: space-evenly;
+           flex-direction: row;
+           flex: wrap;
        }
        .card {
            background-color:rgb(255, 255, 255);
            margin-top: 4%;
            border: solid black;
            font-size: x-large;
+           min-width: 500px;
        }
        .card-header{
            margin: 10%;

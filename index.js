@@ -2,8 +2,8 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const generatePage = require('./src/page-template');
-const writePage = require('./generate-page');
+const templatePage = require('./src/page-template');
+const generatePage = require('./generate-page');
 const memberList = [];
 
 function teamPrompt(){
@@ -44,7 +44,7 @@ function finishPrompt(){
     })
     .then((answer)=>{
         if (answer.addMember) return teamPrompt();
-        else writePage(generatePage(memberList));
+        else generatePage(templatePage(memberList));
     })
 }
 
