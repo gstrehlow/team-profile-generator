@@ -3,22 +3,49 @@ function generateMembers(memberList){
     <section id="employees">
         ${memberList.filter(({officeNumber}) => officeNumber !== undefined) //managers
             .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getOfficeNumber()}</h3>
+                return `<div class="card">
+                <div class="card-header">
+                <h3>${obj.getName()}</h3> <h3>${obj.getRole()}</h3></div> 
+                <div class="card-body">
+                <ul>
+                    <li>ID: ${obj.getID()}</li> 
+                    <li>Email: ${obj.getEmail()}</li> 
+                    <li>Office Number: ${obj.getOfficeNumber()}</li>
+                    </ul>
+                    </div>
+                    </div>
                 `;
             })
         .join('')}
         ${memberList.filter(({github}) => github !== undefined) //engineers
             .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getGitHub()}</h3>
+                return `<div class="card">
+                <div class="card-header">
+                <h3>${obj.getName()}</h3> <h3>${obj.getRole()}</h3></div> 
+                <div class="card-body">
+                <ul>
+                    <li>ID: ${obj.getID()}</li> 
+                    <li>Email: ${obj.getEmail()}</li> 
+                    <li>GitHub Profile: ${obj.getGitHub()}</li>
+                    </ul>
+                    </div>
+                    </div>
                 `;
             })
         .join('')}
         ${memberList.filter(({school}) => school !== undefined) //interns
             .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getSchool()}</h3>
+                return `<div class="card">
+                <div class="card-header">
+                <h3>${obj.getName()}</h3> <h3>${obj.getRole()}</h3></div>
+                <div class="card-body">
+                <ul>
+                    <li>ID: ${obj.getID()}</li> 
+                    <li>Email: ${obj.getEmail()}</li> 
+                    <li>School: ${obj.getSchool()}</li>
+                    </ul>
+                    </div>
+                    </div>
                 `;
             })
         .join('')}
@@ -43,7 +70,6 @@ module.exports = memberList =>{
            background-size: 100% 100%;
            background-repeat: no-repeat;
            margin: 0%;
-           height: 100vh;
        }
        .header {
            background-color: rgb(245, 247, 155);
@@ -52,7 +78,7 @@ module.exports = memberList =>{
            font-size: 30px;
            font-family: 'Bungee Shade', cursive;  
        }
-       .container-body {
+       .container {
            display: flex;
            justify-content: space-evenly;
        }
@@ -64,6 +90,7 @@ module.exports = memberList =>{
        }
        .card-header{
            margin: 10%;
+           text-align: center;
        }
        .card-body{
            margin: 5%;
@@ -76,7 +103,7 @@ module.exports = memberList =>{
    <div class=header>
        <h1>My Team</h1>
    </div>
-   <div class="container-body">
+   <div class="container">
    ${generateMembers(memberList)}
          </div>
     <script src="https://kit.fontawesome.com/257de25400.js" crossorigin="anonymous"></script>         
