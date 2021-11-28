@@ -1,33 +1,4 @@
-function generateMembers(memberList){
-    return `
-    <section id="employees">
-        ${memberList.filter(({officeNumber}) => officeNumber !== undefined) //managers
-            .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getOfficeNumber()}</h3>
-                `;
-            })
-        .join('')}
-        ${memberList.filter(({github}) => github !== undefined) //engineers
-            .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getGitHub()}</h3>
-                `;
-            })
-        .join('')}
-        ${memberList.filter(({school}) => school !== undefined) //interns
-            .map((obj) =>{
-                return `
-                <h3>${obj.getName()} ${obj.getRole()} ${obj.getID()} ${obj.getEmail()} ${obj.getSchool()}</h3>
-                `;
-            })
-        .join('')}
-    </section>
-  `;
-}
-
-module.exports = memberList =>{
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -35,7 +6,6 @@ module.exports = memberList =>{
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Team Profile Generator</title>
-   <link rel="stylesheet" href="../src/style.css">
    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade&display=swap" rel="stylesheet">
    <style>
        body {
@@ -77,10 +47,19 @@ module.exports = memberList =>{
        <h1>My Team</h1>
    </div>
    <div class="container-body">
-   ${generateMembers(memberList)}
+   
+    <section id="employees">
+        
+                <h3>Grant Manager 3 gdstrehlow@outlook.com 5</h3>
+                
+        
+                <h3>Ethan Engineer 1 ebrockway@gmail.com https://github.com/ebrockway?tab=repositories</h3>
+                
+        
+    </section>
+  
          </div>
     <script src="https://kit.fontawesome.com/257de25400.js" crossorigin="anonymous"></script>         
     </body>
     
-    </html>`
-}
+    </html>
