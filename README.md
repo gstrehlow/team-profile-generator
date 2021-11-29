@@ -1,7 +1,7 @@
 # Team Profile Generator
 
-## Video Walk-through
-[Link to Video Walk-through](https://watch.screencastify.com/v/K5s6DvdkEVPF489EJrkK)
+## Video Walkthrough
+[Link to Video Walkthrough](https://watch.screencastify.com/v/K5s6DvdkEVPF489EJrkK)
 
 ## Installation
 - First, you will clone the repository, next you will install the dependencies using 'npm install jest inquirer', after that you can run the tests with 'npm run test', and lastly to run the application, simply type 'node index' into the console and answer the prompts. An index.html file will be generated in the dist folder and that is where you are able to view the the output. 
